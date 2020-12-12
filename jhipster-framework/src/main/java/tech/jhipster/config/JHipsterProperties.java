@@ -290,6 +290,8 @@ public class JHipsterProperties {
 
         private final Redis redis = new Redis();
 
+        private final Ignite ignite = new Ignite();
+
         public Hazelcast getHazelcast() {
             return hazelcast;
         }
@@ -312,6 +314,10 @@ public class JHipsterProperties {
 
         public Redis getRedis() {
             return redis;
+        }
+
+        public Ignite getIgnite() {
+            return ignite;
         }
 
         public static class Hazelcast {
@@ -658,6 +664,29 @@ public class JHipsterProperties {
             public Redis setSubscriptionConnectionMinimumIdleSize(int subscriptionConnectionMinimumIdleSize) {
                 this.subscriptionConnectionMinimumIdleSize = subscriptionConnectionMinimumIdleSize;
                 return this;
+            }
+        }
+
+        public static class Ignite {
+
+            private int timeToLiveSeconds = JHipsterDefaults.Cache.Ignite.timeToLiveSeconds;
+
+            private int backupCount = JHipsterDefaults.Cache.Ignite.backupCount;
+
+            public int getTimeToLiveSeconds() {
+                return timeToLiveSeconds;
+            }
+
+            public void setTimeToLiveSeconds(int timeToLiveSeconds) {
+                this.timeToLiveSeconds = timeToLiveSeconds;
+            }
+
+            public int getBackupCount() {
+                return backupCount;
+            }
+
+            public void setBackupCount(int backupCount) {
+                this.backupCount = backupCount;
             }
         }
     }

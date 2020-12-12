@@ -810,4 +810,24 @@ public class JHipsterPropertiesTest {
         obj.setRetentionPeriod(val);
         assertThat(obj.getRetentionPeriod()).isEqualTo(val);
     }
+
+    @Test
+    public void testCacheIgniteTimeToLiveSeconds() {
+        JHipsterProperties.Cache.Ignite obj = properties.getCache().getIgnite();
+        int val = JHipsterDefaults.Cache.Ignite.timeToLiveSeconds;
+        assertThat(obj.getTimeToLiveSeconds()).isEqualTo(val);
+        val++;
+        obj.setTimeToLiveSeconds(val);
+        assertThat(obj.getTimeToLiveSeconds()).isEqualTo(val);
+    }
+
+    @Test
+    public void testCacheIgniteBackupCount() {
+        JHipsterProperties.Cache.Ignite obj = properties.getCache().getIgnite();
+        int val = JHipsterDefaults.Cache.Ignite.backupCount;
+        assertThat(obj.getBackupCount()).isEqualTo(val);
+        val++;
+        obj.setBackupCount(val);
+        assertThat(obj.getBackupCount()).isEqualTo(val);
+    }
 }

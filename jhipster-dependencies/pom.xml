@@ -77,6 +77,8 @@
         <testcontainers.version>1.15.0</testcontainers.version>
         <xmemcached.version>2.4.6</xmemcached.version>
         <xmemcached-provider.version>4.1.3</xmemcached-provider.version>
+        <ignite.version>2.9.0</ignite.version>
+        <ignite-gridgain.version>8.7.32</ignite-gridgain.version>
     </properties>
 
     <dependencyManagement>
@@ -157,6 +159,21 @@
                 <groupId>org.infinispan</groupId>
                 <artifactId>infinispan-spring-boot-starter-embedded</artifactId>
                 <version>${infinispan-spring-boot-starter-embedded.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.ignite</groupId>
+                <artifactId>ignite-core</artifactId>
+                <version>${ignite.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.ignite</groupId>
+                <artifactId>ignite-spring</artifactId>
+                <version>${ignite.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.gridgain</groupId>
+                <artifactId>ignite-hibernate_5.3</artifactId>
+                <version>${ignite-gridgain.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>

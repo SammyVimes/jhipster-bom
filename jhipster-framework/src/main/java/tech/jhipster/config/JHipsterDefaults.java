@@ -116,6 +116,11 @@ public interface JHipsterDefaults {
             int subscriptionConnectionPoolSize = 50; // default as in redisson
             int subscriptionConnectionMinimumIdleSize = 1; // default as in redisson
         }
+
+        interface Ignite {
+            int timeToLiveSeconds = 3600; // 1 hour
+            int backupCount = 1;
+        }
     }
 
     interface Mail {
